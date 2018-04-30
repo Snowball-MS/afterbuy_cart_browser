@@ -21,6 +21,9 @@
 
 - (void)close:(CDVInvokedUrlCommand*)command
 {
+    if (self.cartWebView != nil) {
+        [self.cartWebView stopLoading];
+    }
     self.callbackId = nil;
     self.evalScript = nil;
 }
