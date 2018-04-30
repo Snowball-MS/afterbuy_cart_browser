@@ -1,7 +1,7 @@
 #import "AfterbuyCartBrowser.h"
 #import <Cordova/CDVPlugin.h>
 
-@implementation AfterbuyCartBrowser : CDVPlugin
+@implementation AfterbuyCartBrowser
 
 - (void)pluginInitialize
 {
@@ -11,12 +11,12 @@
 - (void)open:(CDVInvokedUrlCommand*)command
 {
     self.callbackId = command.callbackId;
-
+    
     NSString* url = [command argumentAtIndex:0];
     self.evalScript = [command argumentAtIndex:1];
-    self.webView = [[UIWebView alloc] init];
-    [self.webView loadRequest[NSURLRequest requestWithURL [NSURL URLWithString:url]]];
-    [self.webView setDelegate:self];
+    self.cartWebView = [[UIWebView alloc] init];
+    [self.cartWebView setDelegate:self];
+    [self.cartWebView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:url]]];
 }
 
 - (void)close:(CDVInvokedUrlCommand*)command
@@ -25,8 +25,19 @@
     self.evalScript = nil;
 }
 
+- (BOOL)webView:(UIWebView *)_webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType
+{
+    return YES;
+}
+
+- (void)webViewDidStartLoad:(UIWebView *)_webView
+{
+    NSLog(@"Afterbuy Shopbag Start Load");
+}
+
 - (void)webViewDidFinishLoad:(UIWebView *)_webView
 {
+    NSLog(@"Afterbuy Shopbag Finish Load");
     if (self.callbackId != nil) {
         NSMutableDictionary *cartResult =  [NSMutableDictionary new];
         [cartResult setObject:[_webView stringByEvaluatingJavaScriptFromString:@"document.getElementsByTagName('head')[0].innerHTML"] forKey:@"head"];
@@ -36,3 +47,9 @@
         [self.commandDelegate sendPluginResult:pluginResult callbackId:self.callbackId];
     }
 }
+
+-(void)webView:(UIWebView *)_webView didFailLoadWithError:(NSError *)error {
+    NSLog(@"Afterbuy Shopbag Error");
+}
+
+@end
