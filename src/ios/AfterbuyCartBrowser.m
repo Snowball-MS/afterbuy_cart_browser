@@ -14,8 +14,9 @@
 
     NSString* url = [command argumentAtIndex:0];
     self.evalScript = [command argumentAtIndex:1];
-    self.webview = [[UIWebView alloc] init];
-    [self.webview setDelegate:self];
+    self.webView = [[UIWebView alloc] init];
+    [self.webView loadRequest[NSURLRequest requestWithURL [NSURL URLWithString:url]]];
+    [self.webView setDelegate:self];
 }
 
 - (void)close:(CDVInvokedUrlCommand*)command
