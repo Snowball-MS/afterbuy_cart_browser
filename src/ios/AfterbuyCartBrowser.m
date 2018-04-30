@@ -40,6 +40,10 @@
 
 - (void)webViewDidFinishLoad:(UIWebView *)_webView
 {
+    if (_webView.isLoading) {
+        return;
+    }
+    
     NSLog(@"Afterbuy Shopbag Finish Load");
     if (self.callbackId != nil) {
         NSMutableDictionary *cartResult =  [NSMutableDictionary new];
