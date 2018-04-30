@@ -1,0 +1,28 @@
+{
+  "name": "AfterbuyCartBrowser",
+  "version": "1.0.0",
+  "description": "Afterbuy Cart Browser Plugin",
+  "cordova": {
+    "id": "afterbuy_cart_browser",
+    "platforms": [
+      "ios"
+    ]
+  },
+  "keywords": [
+    "ecosystem:cordova",
+    "cordova-android"
+  ],
+  "author": "Snowball-MS",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Snowball-MS/afterbuy_cart_browser.git"
+  },
+  "homepage": "https://github.com/Snowball-MS/afterbuy_cart_browser",
+  "engines": [
+    {
+      "name": "cordova-ios",
+      "version": ">=3.5.0"
+    }
+  ]
+}
