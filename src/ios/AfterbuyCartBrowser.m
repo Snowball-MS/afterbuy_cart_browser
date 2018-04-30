@@ -1,4 +1,4 @@
-#import "AfterbuyCartBrowser"
+#import "AfterbuyCartBrowser.h"
 #import <Cordova/CDVPlugin.h>
 
 @implementation AfterbuyCartBrowser : CDVPlugin
