@@ -1,5 +1,4 @@
 #import <Cordova/CDVPlugin.h>
-#import <Cordova/CDVInvokedUrlCommand.h>
 
 #ifdef __CORDOVA_4_0_0
     #import <Cordova/CDVUIWebViewDelegate.h>
@@ -18,3 +17,4 @@
 - (void)close:(CDVInvokedUrlCommand*)command;
 
 @end
+    
