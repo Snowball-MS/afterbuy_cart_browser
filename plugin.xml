@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" id="afterbuy_car_browser" version="1.0.0">
+    <name>Afterbuy Cart Browser</name>
+    <description>
+        Afterbuy Cart Browser Plugin
+    </description>
+
+    <js-module name="AfterbuyCartBrowser" src="www/AfterbuyCartBrowser.js">
+        <clobbers target="AfterbuyCartBrowser" />
+    </js-module>
+
+    <platform name="ios">
+        <config-file target="config.xml" parent="/*">
+            <feature name="AfterbuyCartBrowser">
+                <param name="ios-package" value="AfterbuyCartBrowser"/>
+            </feature>
+        </config-file>
+        <header-file src="src/ios/AfterbuyCartBrowser.h" />
+        <source-file src="src/ios/AfterbuyCartBrowser.m" />
+    </platform>
+</plugin>
