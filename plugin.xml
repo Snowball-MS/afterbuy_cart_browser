@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" id="afterbuy_car_browser" version="1.0.0">
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" id="afterbuy_cart_browser" version="1.0.0">
     <name>AfterbuyCartBrowser</name>
     <description>
         Afterbuy Cart Browser Plugin
