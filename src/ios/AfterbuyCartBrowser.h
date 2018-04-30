@@ -6,15 +6,15 @@
     #import <Cordova/CDVWebViewDelegate.h>
 #endif
 
-@interface AfterbuyCartBrowser : CDVPlugin {
+@interface AfterbuyCartBrowser : CDVPlugin <UIWebViewDelegate> {
 }
+
+@property (nonatomic, strong) UIWebView* cartWebView;
 
 @property (nonatomic, copy) NSString* callbackId;
 @property (nonatomic, copy) NSString* evalScript;
-@property (nonatomic, strong) IBOutlet UIWebView* webView;
 
 - (void)open:(CDVInvokedUrlCommand*)command;
 - (void)close:(CDVInvokedUrlCommand*)command;
 
 @end
-    
