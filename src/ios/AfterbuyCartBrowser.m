@@ -15,7 +15,7 @@
     NSString* url = [command argumentAtIndex:0];
     self.evalScript = [command argumentAtIndex:1];
     self.webview = [[UIWebView alloc] init];
-    [webViewCart setDelegate:self];
+    [self.webview setDelegate:self];
 }
 
 - (void)close:(CDVInvokedUrlCommand*)command
