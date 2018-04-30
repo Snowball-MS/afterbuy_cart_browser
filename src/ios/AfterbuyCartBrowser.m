@@ -1,7 +1,7 @@
 #import "AfterbuyCartBrowser"
 #import <Cordova/CDVPlugin.h>
 
-@implementation AfterbuyCartBrowser
+@implementation AfterbuyCartBrowser : CDVPlugin
 
 - (void)pluginInitialize
 {
