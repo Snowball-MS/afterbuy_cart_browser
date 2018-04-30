@@ -27,9 +27,6 @@
 - (void)webViewDidFinishLoad:(UIWebView *)_webView
 {
     if (self.callbackId != nil) {
-        NSString* head = [_webView stringByEvaluatingJavaScriptFromString:@"document.getElementsByTagName('head')[0].innerHTML"];
-        NSSTring* html = ;
-
         NSMutableDictionary *cartResult =  [NSMutableDictionary new];
         [cartResult setObject:[_webView stringByEvaluatingJavaScriptFromString:@"document.getElementsByTagName('head')[0].innerHTML"] forKey:@"head"];
         [cartResult setObject:[_webView stringByEvaluatingJavaScriptFromString:self.evalScript] forKey:@"html"];
