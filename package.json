@@ -5,6 +5,7 @@
   "cordova": {
     "id": "afterbuy_cart_browser",
     "platforms": [
+      "android",
       "ios"
     ]
   },
