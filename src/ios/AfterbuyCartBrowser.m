@@ -45,10 +45,11 @@
     }
     
     NSLog(@"Afterbuy Shopbag Finish Load");
+    
     if (self.callbackId != nil) {
         NSMutableDictionary *cartResult =  [NSMutableDictionary new];
         [cartResult setObject:[_webView stringByEvaluatingJavaScriptFromString:@"document.getElementsByTagName('head')[0].innerHTML"] forKey:@"head"];
-        [cartResult setObject:[_webView stringByEvaluatingJavaScriptFromString:self.evalScript] forKey:@"html"];
+        [cartResult setObject:[_webView stringByEvaluatingJavaScriptFromString:@"document.getElementsByTagName('body')[0].innerHTML"] forKey:@"html"];
 
         CDVPluginResult* pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsDictionary:cartResult];
         [self.commandDelegate sendPluginResult:pluginResult callbackId:self.callbackId];
