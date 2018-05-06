@@ -5,6 +5,20 @@
         Afterbuy Cart Browser Plugin
     </description>
 
+    <platform name="android">
+        <js-module name="AfterbuyCartBrowser" src="www/AfterbuyCartBrowser.js">
+            <clobbers target="AfterbuyCartBrowser" />
+        </js-module>
+        
+        <config-file parent="/*" target="res/xml/config.xml">
+            <feature name="AfterbuyCartBrowser">
+                <param name="android-package" value="com.idve.afterbuy.cartbrowser.AfterbuyCartBrowser"/>
+            </feature>
+        </config-file>
+        
+        <source-file src="src/android/AfterbuyCartBrowser.java" target-dir="src/com/idve/afterbut/cartbrowser"/>
+    </platform>
+    
     <platform name="ios">
         <js-module name="AfterbuyCartBrowser" src="www/AfterbuyCartBrowser.js">
             <clobbers target="AfterbuyCartBrowser" />
