@@ -16,7 +16,7 @@
             </feature>
         </config-file>
         
-        <source-file src="src/android/AfterbuyCartBrowser.java" target-dir="src/com/idve/afterbut/cartbrowser"/>
+        <source-file src="src/android/AfterbuyCartBrowser.java" target-dir="src/com/idve/afterbuy/cartbrowser"/>
     </platform>
     
     <platform name="ios">
